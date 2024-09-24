@@ -1,0 +1,80 @@
+.gnb {
+    background-color: var(--page-color--white);
+    .contents {
+        display: flex;
+        justify-content: space-between;
+        align-items: end;
+        height: 2.8em;
+        padding: 0.97em 0 0.5em;
+        .headline-sm {
+            width: 30%;
+            @include tablet {
+                width: auto;
+            }
+            @include mobile {
+                display: none;
+            }
+        }
+        .inner2 {
+            width: 66.35%;
+            display: flex;
+            justify-content: space-between;
+            .gnb-wrap {
+                flex: 1;
+                .gnb-list {
+                    display: flex;
+                    .gnb-item {
+                        padding-right: 0.21em;
+                        a {
+                            @extend .font;
+                            &:hover {
+                                opacity: 0.4;
+                                transition: opacity 0.2s;
+                            }
+                        }
+                        & + .gnb-item::before {
+                            content: "/";
+                        }
+                        &:last-child {
+                            flex: 1;
+                            text-align: end;
+                            &::before {
+                                content: "";
+                            }
+                        }
+                    }
+                    @include tablet {
+                        justify-content: center;
+                        .gnb-item:last-child {
+                            flex: 0 0 auto;
+                        }
+                    }
+                    @include mobile {
+                        justify-content: flex-start;
+                        .gnb-item:last-child {
+                            flex: 1;
+                        }
+                    }
+                }
+            }
+            .copy {
+                @extend .font;
+
+                width: 43.7%;
+                text-align: right;
+                @include tablet {
+                    width: auto;
+                }
+                @include mobile {
+                    display: none;
+                }
+            }
+            @include tablet {
+                flex: 1;
+                width: auto;
+            }
+        }
+        @include tablet {
+        }
+    }
+}

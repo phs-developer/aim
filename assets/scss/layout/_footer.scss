@@ -1,0 +1,26 @@
+#footer {
+    margin-top: 25em;
+    .group-footer {
+        display: flex;
+        justify-content: space-between;
+        padding-top: 0.97em;
+        margin-bottom: 0.56em;
+        .desc {
+            @extend .font;
+
+            @include mobile {
+                font-size: 12px;
+            }
+        }
+        .copy {
+            @extend .font;
+
+            @include mobile {
+                font-size: 12px;
+            }
+        }
+    }
+    @include mobile {
+        margin-top: 15em;
+    }
+}
